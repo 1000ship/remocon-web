@@ -544,6 +544,13 @@ var routes = [
     ]
   },
 
+
+  {
+    path: '/settings/',
+    url: './pages/settings.html',
+
+  },
+
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',
