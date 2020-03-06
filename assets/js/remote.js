@@ -1,4 +1,15 @@
-var webSocket = new WebSocket("ws://172.30.1.43:2362");
+
+app.data.socketIp = "172.30.1.43";
+app.data.socketPort = "2362"
+
+app.dialog.preloader( "Connecting to\nws://"+app.data.socketIp+":"+app.data.socketPort );
+var webSocket = new WebSocket("ws://" + app.data.socketIp + ":" + app.data.socketPort);
+
+webSocket.onopen = function()
+{
+    printLog("Connect successfully!");
+    app.dialog.close();
+}
 
 // set --
 function remoteMoveRel( relX, relY )
