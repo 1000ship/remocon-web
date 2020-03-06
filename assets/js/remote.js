@@ -11,6 +11,17 @@ webSocket.onopen = function()
     app.dialog.close();
 }
 
+webSocket.onmessage = function (evt) { 
+    var received_msg = evt.data;
+    alert("Message is received...");
+};
+
+webSocket.onclose = function() { 
+    app.dialog.confirm('Connection closed.. Will you retry?', function () {
+        window.location.reload();
+    });
+};
+
 // set --
 function remoteMoveRel( relX, relY )
 {

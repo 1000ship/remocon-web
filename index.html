@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#2196f3">
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
-  <title>Framework7</title>
+  <title>Remocon</title>
   <link rel="stylesheet" href="packages/core/css/framework7.bundle.min.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="apple-touch-icon" href="img/f7-icon-square.png">
@@ -17,10 +17,33 @@
 </head>
 <body>
   <div id="app">
+
+    <div class="panel panel-right panel-cover panel-resizable panel-init">
+      <div class="page">
+        <div class="page-content">
+          <div class="block-title">Settings</div>
+          <div class="block">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
       <div class="page page-home">
+        <div class="navbar">
+          <div class="navbar-bg"></div>
+          <div class="navbar-inner">
+              <div class="title">Remocon</div>
+              <div class="right">
+                  <a href="#" class="link icon-only panel-open" data-panel="right">
+                    <i class="icon f7-icons">menu</i>
+                  </a>
+              </div>
+          </div>
+        </div>
+        
         <div class="page-content">
-          
           <div class="mouse-container">
             <div class="mousepad"></div>
             <div class="row mousebtn">
@@ -37,10 +60,19 @@
               <div class="messagebar-area">
                 <textarea id="keyboardInput" placeholder="Keyboard Input.."></textarea>
               </div>
-              <a class="link" href="#" onclick="sendKeyboardInput()">Send</a>
-              <a class="link" href="#" onclick="remoteHotkey('backspace')">Del</a>
+              <a class="link" href="#" onclick="sendKeyboardInput()">
+                <i class="icon f7-icons">paperplane</i></a>
+              <a class="link" href="#" onclick="remoteHotkey('backspace')">
+                <i class="icon f7-icons">delete_left</i>
+              </a>
             </div>
             <div class="messagebar-sheet"></div>
+          </div>
+
+          <div class="fab fab-left-top">
+            <a href="#">
+              <i class="icon f7-icons">setting</i>
+            </a>
           </div>
 
         </div>
