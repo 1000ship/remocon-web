@@ -1,39 +1,41 @@
-$(function(){
-    var prevX = 0
-    var prevY = 0
-    var isMouseDown = false
 
-    mouseDownEvent = function(e){
-        prevX = e.pageX
-        prevY = e.pageY
-        isMouseDown = true
-        printLog("mousedown " + e.pageX + ", " + e.pageY);
-    }
+var prevX = 0
+var prevY = 0
+var isMouseDown = false
 
-    mouseUpEvent = function(e){
-        isMouseDown = false
-        printLog("mouseup " + e.pageX + ", " + e.pageY);
-    }
+function mouseDownEvent(e) {
+    prevX = e.pageX
+    prevY = e.pageY
+    isMouseDown = true
+}
 
-    mouseMoveEvent = function(e){
-        if (!isMouseDown)
-            return;
-        let currentX = e.pageX;
-        let currentY = e.pageY;
-        remoteMoveRel( e.pageX - prevX, e.pageY - prevY );
-        prevX = currentX;
-        prevY = currentY;
-        e.preventDefault()
-    }
+function mouseUpEvent(e){
+    isMouseDown = false
+}
 
-    $(".mousepad").on("mousedown", mouseDownEvent);
-    $(".mousepad").on("touchstart", mouseDownEvent);
-    $("body").on("mouseup", mouseUpEvent);
-    $("body").on("touchend", mouseUpEvent);
-    $(".mousepad").on("mousemove", mouseMoveEvent );
-    $(".mousepad").on("touchmove", mouseMoveEvent );
-    $(".mousepad").on("click", function(e){
-        remoteClick();
-    });
-    
-})
+function mouseMoveEvent(e){
+    if (!isMouseDown)
+        return;
+    let currentX = e.pageX;
+    let currentY = e.pageY;
+    remoteMoveRel( e.pageX - prevX, e.pageY - prevY );
+    prevX = currentX;
+    prevY = currentY;
+    e.preventDefault()
+}
+
+function sendKeyboardInput (){
+    let str = $("#keyboardInput")[0].value;
+    $("#keyboardInput")[0].value = "";
+    remoteTyping( str );
+}
+
+// $(".mousepad").mousedown(mouseDownEvent);
+$(".mousepad").touchstart(mouseDownEvent);
+// $("body").mouseup(mouseUpEvent);
+$("body").touchend(mouseUpEvent);
+// $(".mousepad").mousemove( mouseMoveEvent );
+$(".mousepad").touchmove( mouseMoveEvent );
+$(".mousepad").click( function(e){
+    remoteClick();
+});

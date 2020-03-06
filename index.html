@@ -7,46 +7,41 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#2196f3">
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
-  <title>Remocon</title>
+  <title>Framework7</title>
   <link rel="stylesheet" href="packages/core/css/framework7.bundle.min.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="apple-touch-icon" href="img/f7-icon-square.png">
   <link rel="icon" href="img/f7-icon.png">
+
+  <link rel="stylesheet" href="assets/css/remote.css"/>
 </head>
 <body>
   <div id="app">
     <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
       <div class="page page-home">
-        <div class="navbar navbar-large-transparent">
-          <div class="navbar-bg"></div>
-          <div class="navbar-inner">
-            <div class="left">
-              <a href="#" class="link icon-only panel-open" data-panel="left">
-
-              </a>
-            </div>
-            <div class="title sliding">Framework7</div>
-            <div class="right">
-              <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
-
-              </a>
-            </div>
-            <div class="title-large">
-              <div class="title-large-text">Framework7</div>
-            </div>
-            <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
-              <div class="searchbar-inner">
-                <div class="searchbar-input-wrap">
-                  <input type="search" placeholder="Search components"/>
-                  <i class="searchbar-icon"></i>
-                  <span class="input-clear-button"></span>
-                </div>
-                <span class="searchbar-disable-button if-not-aurora">Cancel</span>
-              </div>
-            </form>
-          </div>
-        </div>
         <div class="page-content">
+          
+          <div class="mouse-container">
+            <div class="mousepad"></div>
+            <div class="row mousebtn">
+              <button class="col-50 button button-fill">Click</button>
+              <button class="col-50 button button-fill">Right Click</button>
+            </div>
+          </div>
+          
+          <div class="toolbar messagebar">
+            <div class="toolbar-inner">
+              <a class="link toggle-sheet" href="#" onclick="remoteScreenshot();">
+                <i class="icon material-icons md-only">camera_alt</i>
+              </a>
+              <div class="messagebar-area">
+                <textarea id="keyboardInput" placeholder="Keyboard Input.."></textarea>
+              </div>
+              <a class="link" href="#" onclick="sendKeyboardInput()">Send</a>
+              <a class="link" href="#" onclick="remoteHotkey('backspace')">Del</a>
+            </div>
+            <div class="messagebar-sheet"></div>
+          </div>
 
         </div>
       </div>
@@ -55,5 +50,8 @@
   <script src="packages/core/js/framework7.bundle.min.js"></script>
   <script src="js/routes.js"></script>
   <script src="js/app.js"></script>
+
+  <script src="assets/js/remote.js"></script>
+  <script src="assets/js/mousepad.js"></script>
 </body>
 </html>

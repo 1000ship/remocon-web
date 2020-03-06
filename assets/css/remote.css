@@ -1,5 +1,27 @@
+.mouse-container {
+    height: 100%;
+}
+
 .mousepad {
-    width: 100%;
-    height: 50vh;
+    height: calc(100% - 125px);
+    background-color: lightgray;
+    margin: 5px;
+    border-radius: 3vw;
+    display: block;
+}
+
+.mousebtn {
+    margin: 5px;
+}
+
+.mousebtn button {
+    padding: 0px;
+    height: 60px;
+    font-size: 25px;
     background-color: gray;
+}
+
+.messagebar {
+    position: absolute;
+    bottom: 0px;
 }
