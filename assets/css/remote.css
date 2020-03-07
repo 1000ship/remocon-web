@@ -3,11 +3,19 @@
 }
 
 .mousepad {
-    height: calc(100% - 125px);
+    height: calc(100% - 100px);
     background-color: lightgray;
     margin: 5px;
+    margin-top: 30px;
     border-radius: 3vw;
     display: block;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: darkgray;
+    font-size: 25px;
+    font-style: italic;
 }
 
 .mousebtn {

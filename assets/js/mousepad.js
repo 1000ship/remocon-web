@@ -34,7 +34,7 @@ function sendKeyboardInput (){
 $(".mousepad").touchstart(mouseDownEvent);
 // $("body").mouseup(mouseUpEvent);
 $("body").touchend(mouseUpEvent);
-// $(".mousepad").mousemove( mouseMoveEvent );
+$(".mousepad").mousemove( mouseMoveEvent );
 $(".mousepad").touchmove( mouseMoveEvent );
 $(".mousepad").click( function(e){
     remoteClick();
