@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#2196f3">
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
-  <title>Remocon</title>
-  <link rel="stylesheet" href="packages/core/css/framework7.bundle.min.css">
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="apple-touch-icon" href="img/f7-icon-square.png">
-  <link rel="icon" href="img/f7-icon.png">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#2196f3">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <title>Remocon</title>
+    <link rel="stylesheet" href="packages/core/css/framework7.bundle.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="apple-touch-icon" href="img/f7-icon-square.png">
+    <link rel="icon" href="img/f7-icon.png">
 
-  <link rel="stylesheet" href="assets/css/main.css"/>
-  <link rel="stylesheet" href="assets/css/remote.css"/>
-</head>
-<body>
-  <div id="app">
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/remote.css"/>
+  </head>
+  <body>
+    <div id="app">
 
-    <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
-      <div class="page page-home">
-        <div class="navbar">
-          <div class="navbar-bg"></div>
-          <div class="navbar-inner">
-              <div class="title">Remocon Client</div>
-              <!-- <div class="right">
-                  <a href="/settings/" class="link icon-only" data-transition="f7-cover">
-                    <i class="icon f7-icons">menu</i>
-                  </a>
-              </div> -->
-          </div>
-        </div>
-        
-        <div class="page-content">
-          <div class="mouse-container">
-            <div class="mousepad">Touch pad</div>
-            <!-- <div class="row mousebtn">
-              <button class="col-50 button button-fill">Click</button>
-              <button class="col-50 button button-fill">Right Click</button>
-            </div> -->
+      <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
+        <div class="page page-home">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+                <div class="title">Remocon Client</div>
+                <!-- <div class="right">
+                    <a href="/settings/" class="link icon-only" data-transition="f7-cover">
+                      <i class="icon f7-icons">menu</i>
+                    </a>
+                </div> -->
+            </div>
           </div>
           
-          <div class="toolbar messagebar">
-            <div class="toolbar-inner">
-              <a class="link toggle-sheet" href="#" onclick="remoteScreenshot();">
-                <i class="icon material-icons md-only">camera_alt</i>
-              </a>
-              <div class="messagebar-area">
-                <textarea id="keyboardInput" placeholder="Keyboard Input.."></textarea>
-              </div>
-              <a class="link" href="#" onclick="sendKeyboardInput()">
-                <i class="icon f7-icons">paperplane</i></a>
-              <a class="link" href="#" onclick="remoteHotkey('backspace')">
-                <i class="icon f7-icons">delete_left</i>
-              </a>
+          <div class="page-content">
+            <div class="mouse-container">
+              <div class="mousepad"></div>
+              <!-- <div class="row mousebtn">
+                <button class="col-50 button button-fill">Click</button>
+                <button class="col-50 button button-fill">Right Click</button>
+              </div> -->
             </div>
-            <div class="messagebar-sheet"></div>
-          </div>
+            
+            <div class="toolbar messagebar">
+              <div class="toolbar-inner">
+                <a class="link toggle-sheet" href="#" onclick="remoteScreenshot();">
+                  <i class="icon material-icons md-only">camera_alt</i>
+                </a>
+                <div class="messagebar-area">
+                  <textarea id="keyboardInput" placeholder="Keyboard Input.."></textarea>
+                </div>
+                <a class="link" href="#" onclick="sendKeyboardInput()">
+                  <i class="icon f7-icons">paperplane</i></a>
+                <a class="link" href="#" onclick="remoteHotkey('backspace')">
+                  <i class="icon f7-icons">delete_left</i>
+                </a>
+              </div>
+              <div class="messagebar-sheet"></div>
+            </div>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="packages/core/js/framework7.bundle.min.js"></script>
-  <script src="js/routes.js"></script>
-  <script src="js/app.js"></script>
+    <script src="packages/core/js/framework7.bundle.min.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/app.js"></script>
 
-  <script src="assets/js/remote.js"></script>
-  <script src="assets/js/mousepad.js"></script>
-  <script src="assets/js/settings.js"></script>
-</body>
+    <script src="assets/js/requestParam.js"></script>
+    <script src="assets/js/remote.js"></script>
+    <script src="assets/js/mousepad.js"></script>
+    <!-- <script src="assets/js/settings.js"></script> -->
+  </body>
 </html>

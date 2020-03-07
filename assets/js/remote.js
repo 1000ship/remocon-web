@@ -1,6 +1,6 @@
 
-app.data.socketIp = "172.30.1.37";
-app.data.socketPort = "2362"
+app.data.socketIp = requestParam.get("ip"); // "172.30.1.37";
+app.data.socketPort = requestParam.get("port"); // "2362";
 
 app.dialog.preloader( "Connecting to\nws://"+app.data.socketIp+":"+app.data.socketPort );
 var webSocket = new WebSocket("ws://" + app.data.socketIp + ":" + app.data.socketPort);
